@@ -1,0 +1,84 @@
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>FITNESS</title>
+      <link rel="stylesheet" href="assets/styles.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Inter:wght@300&display=swap" rel="stylesheet">
+   </head>
+   <body>
+      <div class="content">
+         <div class="container">
+            <div class="header">
+               <h1>
+                  <svg width="60" height="60" style="padding-right: 12px;"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <image href="assets/coffee.jpg" height="60" width="60"/>
+                  </svg>
+                  FITNESS
+               </h1>
+            </div>
+            <h2>Exercise</h2>
+            <div class="exercise-deck">
+               <div class="tile" id="pushup" onclick="setExercise('pushup')">
+                  <img src="assets/drinks-cappuccino.jpg" height="170px" width="270" />
+                  <div class="item-title">Pushup</div>
+               </div>
+               <div  class="tile" id="plank" onclick="setExercise('plank')">
+                  <img src="assets/drinks-latte.jpg" height="170px" width="270"/>
+                  <div class="item-title">Plank</div>
+               </div>
+               <div class="tile" id="squat" onclick="setExercise('squat')" >
+                  <img src="assets/drinks-americano.jpg" height="170px" width="270"/>
+                  <div class="item-title">Squat</div>
+               </div>
+            </div>
+            <h2>Yoga</h2>
+            <div class="yoga-deck">
+               <div  class="tile" id="cheesecake" onclick="setYoga('cheesecake')" >
+                  <img src="assets/dessert-cheesecake.jpg" height="170px"width="270"/>
+                  <div class="item-title">Cheesecake</div>
+               </div>
+               <div  class="tile" id="brownie" onclick="setDessert('brownie')">
+                  <img src="assets/dessert-brownie.jpg" height="170px" width="270"/>
+                  <div class="item-title">Brownie</div>
+               </div>
+               <div class="tile" id="apple-pie" onclick="setDessert('apple pie')">
+                  <img src="assets/dessert-apple-pie.jpg" height="170px" width="270"/>
+                  <div class="item-title">Apple pie</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script>
+         let coffee = '';
+         let dessert = '';
+         
+         function setExercise(coffee) {      
+             // Adding the order to the cart
+             document.getElementById("coffee").innerHTML = coffee.charAt(0).toUpperCase() + coffee.slice(1);
+         
+             // Highlighting tiles
+             let item = coffee.toLowerCase();
+             highlightProduct(item);
+         }         
+         
+         function setDessert(dessert) {    
+             // Adding the order to the cart
+             document.getElementById("dessert").innerHTML = dessert.charAt(0).toUpperCase() + dessert.slice(1);
+         
+             // Highlighting tiles
+             let item = dessert.replace(/\s+/g, '-').toLowerCase();
+             highlightProduct(item);
+         }
+         
+         function highlightProduct(item) {
+            const el = document.getElementById(item);
+            if (el) {
+               [...el.parentElement.children].forEach(sib => sib.classList.remove('highlighted'));
+               el.classList.add('highlighted');               
+            }
+         };
+      </script>
+   </body>
+</html>

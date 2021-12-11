@@ -13,7 +13,7 @@
                <h1>
                   <svg width="60" height="60" style="padding-right: 12px;"
                      xmlns="http://www.w3.org/2000/svg">
-                     <image href="assets/coffee.jpg" height="60" width="60"/>
+                     <image href="assets/fitness.jpg" height="60" width="60"/>
                   </svg>
                   FITNESS
                </h1>
@@ -21,57 +21,75 @@
             <h2>Exercise</h2>
             <div class="exercise-deck">
                <div class="tile" id="pushup" onclick="setExercise('pushup')">
-                  <img src="assets/drinks-cappuccino.jpg" height="170px" width="270" />
+                  <img src="assets/pushup.jpg" height="170px" width="270" />
                   <div class="item-title">Pushup</div>
                </div>
                <div  class="tile" id="plank" onclick="setExercise('plank')">
-                  <img src="assets/drinks-latte.jpg" height="170px" width="270"/>
+                  <img src="assets/plank.jpg" height="170px" width="270"/>
                   <div class="item-title">Plank</div>
                </div>
                <div class="tile" id="squat" onclick="setExercise('squat')" >
-                  <img src="assets/drinks-americano.jpg" height="170px" width="270"/>
+                  <img src="assets/squat.jpg" height="170px" width="270"/>
                   <div class="item-title">Squat</div>
                </div>
             </div>
             <h2>Yoga</h2>
             <div class="yoga-deck">
-               <div  class="tile" id="cheesecake" onclick="setYoga('cheesecake')" >
-                  <img src="assets/dessert-cheesecake.jpg" height="170px"width="270"/>
-                  <div class="item-title">Cheesecake</div>
+               <div  class="tile" id="surya-namaskar" onclick="setExercise('surya namaskar')" >
+                  <img src="assets/surya namaskar.jpeg" height="170px"width="270"/>
+                  <div class="item-title">Surya namaskar</div>
                </div>
-               <div  class="tile" id="brownie" onclick="setDessert('brownie')">
-                  <img src="assets/dessert-brownie.jpg" height="170px" width="270"/>
-                  <div class="item-title">Brownie</div>
+               <div  class="tile" id="kapal-bharti" onclick="setExercise('kapal bharti')">
+                  <img src="assets/kapalbharti.jpg" height="170px" width="270"/>
+                  <div class="item-title">Kapal Bharti</div>
                </div>
-               <div class="tile" id="apple-pie" onclick="setDessert('apple pie')">
-                  <img src="assets/dessert-apple-pie.jpg" height="170px" width="270"/>
-                  <div class="item-title">Apple pie</div>
+               <div class="tile" id="Anulom-Vilom" onclick="setExercise('anulom vilom')">
+                  <img src="assets/Anulom Vilom.jpg" height="170px" width="270"/>
+                  <div class="item-title">Anulom Vilom</div>
                </div>
             </div>
          </div>
-      </div>
-      <script>
-         let coffee = '';
-         let dessert = '';
-         
-         function setExercise(coffee) {      
-             // Adding the order to the cart
-             document.getElementById("coffee").innerHTML = coffee.charAt(0).toUpperCase() + coffee.slice(1);
-         
-             // Highlighting tiles
-             let item = coffee.toLowerCase();
-             highlightProduct(item);
-         }         
-         
-         function setDessert(dessert) {    
-             // Adding the order to the cart
-             document.getElementById("dessert").innerHTML = dessert.charAt(0).toUpperCase() + dessert.slice(1);
-         
-             // Highlighting tiles
-             let item = dessert.replace(/\s+/g, '-').toLowerCase();
-             highlightProduct(item);
+         </div><div class="alan-btn"></div>
+         <script type="text/javascript"
+         src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+         <script>
+         var alanBtnInstance = alanBtn({
+         key: "93141fea105d62cb3977e095c566caa62e956eca572e1d8b807a3e2338fdd0dc/stage",
+         onCommand: function (commandData) {
+         if (commandData.command === "highlight") {
+         highlightProduct(commandData.item);
+         }else if(commandData.command==="hyerlink")
+         {
+            setExercise(commandData.item);
          }
-         
+         },
+         rootEl: document.getElementById("alan-btn"),
+         });
+      </script>
+      <script>
+         function setExercise(item){
+            if(item=='pushup') 
+               {highlightProduct(item);
+               document.location.href = "pushup.html";}
+            else if(item=='plank')
+            {highlightProduct(item);
+               document.location.href = "https://www.youtube.com/";}
+            else if(item=='squat')
+            {
+               highlightProduct(item);
+               document.location.href = "squat.html";
+            }
+               
+            else if(item=='surya namaskar'|| item == "suryanamaskar")
+               {highlightProduct(item);
+                  document.location.href = "surya namaskar.html";}
+            else if(item=='kapal bharti'|| item=='kapalbharti')
+               {highlightProduct(item);
+                  document.location.href = "kapal bharti.html";}
+            else if(item=='anulom vilom'||item=='anulomvilom')
+               {highlightProduct(item);
+                  document.location.href = "anulom vilom.html";}
+			}					
          function highlightProduct(item) {
             const el = document.getElementById(item);
             if (el) {

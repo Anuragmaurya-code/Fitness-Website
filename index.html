@@ -20,30 +20,30 @@
             </div>
             <h2>Exercise</h2>
             <div class="exercise-deck">
-               <div class="tile" id="pushup" onclick="setExercise('pushup')">
+               <div class="tile" id=1 onclick="setExercise(1)">
                   <img src="assets/pushup.jpg" height="170px" width="270" />
                   <div class="item-title">Pushup</div>
                </div>
-               <div  class="tile" id="plank" onclick="setExercise('plank')">
+               <div  class="tile" id=2 onclick="setExercise(2)">
                   <img src="assets/plank.jpg" height="170px" width="270"/>
                   <div class="item-title">Plank</div>
                </div>
-               <div class="tile" id="squat" onclick="setExercise('squat')" >
+               <div class="tile" id=3 onclick="setExercise(3)" >
                   <img src="assets/squat.jpg" height="170px" width="270"/>
                   <div class="item-title">Squat</div>
                </div>
             </div>
             <h2>Yoga</h2>
             <div class="yoga-deck">
-               <div  class="tile" id="surya-namaskar" onclick="setExercise('surya namaskar')" >
+               <div  class="tile" id=4 onclick="setExercise(4)" >
                   <img src="assets/surya namaskar.jpeg" height="170px"width="270"/>
                   <div class="item-title">Surya namaskar</div>
                </div>
-               <div  class="tile" id="kapal-bharti" onclick="setExercise('kapal bharti')">
+               <div  class="tile" id=5 onclick="setExercise(5)">
                   <img src="assets/kapalbharti.jpg" height="170px" width="270"/>
                   <div class="item-title">Kapal Bharti</div>
                </div>
-               <div class="tile" id="Anulom-Vilom" onclick="setExercise('anulom vilom')">
+               <div class="tile" id=6 onclick="setExercise(6)">
                   <img src="assets/Anulom Vilom.jpg" height="170px" width="270"/>
                   <div class="item-title">Anulom Vilom</div>
                </div>
@@ -68,27 +68,32 @@
       </script>
       <script>
          function setExercise(item){
-            if(item=='pushup') 
-               {highlightProduct(item);
-               document.location.href = "pushup.html";}
-            else if(item=='plank')
-            {highlightProduct(item);
-               document.location.href = "https://www.youtube.com/";}
-            else if(item=='squat')
-            {
+            switch(item){
+            case 1:
+               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
                highlightProduct(item);
-               document.location.href = "squat.html";
+               break;
+            case 2:
+               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
+               highlightProduct(item);
+               break;
+            case 3:
+               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
+               highlightProduct(item);
+               break;
+            case 4:
+               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
+               highlightProduct(item);
+               break;
+            case 5:
+               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
+               highlightProduct(item);
+               break;
+            case 6:
+               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
+               highlightProduct(item);
+               break;
             }
-               
-            else if(item=='surya namaskar'|| item == "suryanamaskar")
-               {highlightProduct(item);
-                  document.location.href = "surya namaskar.html";}
-            else if(item=='kapal bharti'|| item=='kapalbharti')
-               {highlightProduct(item);
-                  document.location.href = "kapal bharti.html";}
-            else if(item=='anulom vilom'||item=='anulomvilom')
-               {highlightProduct(item);
-                  document.location.href = "anulom vilom.html";}
 			}					
          function highlightProduct(item) {
             const el = document.getElementById(item);

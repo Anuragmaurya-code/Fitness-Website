@@ -20,30 +20,30 @@
             </div>
             <h2>Exercise</h2>
             <div class="exercise-deck">
-               <div class="tile" id=1 onclick="setExercise(1)">
+               <div class="tile" id=pushup onclick="setExercise('pushup')">
                   <img src="assets/pushup.jpg" height="170px" width="270" />
                   <div class="item-title">Pushup</div>
                </div>
-               <div  class="tile" id=2 onclick="setExercise(2)">
+               <div  class="tile" id=plank onclick="setExercise('plank')">
                   <img src="assets/plank.jpg" height="170px" width="270"/>
                   <div class="item-title">Plank</div>
                </div>
-               <div class="tile" id=3 onclick="setExercise(3)" >
+               <div class="tile" id=squat onclick="setExercise('squat')" >
                   <img src="assets/squat.jpg" height="170px" width="270"/>
                   <div class="item-title">Squat</div>
                </div>
             </div>
             <h2>Yoga</h2>
             <div class="yoga-deck">
-               <div  class="tile" id=4 onclick="setExercise(4)" >
+               <div  class="tile" id=surya-namaskar onclick="setExercise('surya namaskar')" >
                   <img src="assets/surya namaskar.jpeg" height="170px"width="270"/>
                   <div class="item-title">Surya namaskar</div>
                </div>
-               <div  class="tile" id=5 onclick="setExercise(5)">
+               <div  class="tile" id=kapal-bharti onclick="setExercise('kapal bharti')">
                   <img src="assets/kapalbharti.jpg" height="170px" width="270"/>
                   <div class="item-title">Kapal Bharti</div>
                </div>
-               <div class="tile" id=6 onclick="setExercise(6)">
+               <div class="tile" id=anulom-vilom onclick="setExercise('anulom vilom')">
                   <img src="assets/Anulom Vilom.jpg" height="170px" width="270"/>
                   <div class="item-title">Anulom Vilom</div>
                </div>
@@ -68,28 +68,29 @@
       </script>
       <script>
          function setExercise(item){
+   
             switch(item){
-            case 1:
+            case 'pushup':
                document.location.href = "pushup.html";
                highlightProduct(item);
                break;
-            case 2:
+            case 'plank':
                document.location.href = "pushup.html";
                highlightProduct(item);
                break;
-            case 3:
+            case 'squat':
                document.location.href = "pushup.html";
                highlightProduct(item);
                break;
-            case 4:
+            case 'surya-namaskar':
                document.location.href = "pushup.html";
                highlightProduct(item);
                break;
-            case 5:
+            case 'kapal-bharti':
                document.location.href = "pushup.html";
                highlightProduct(item);
                break;
-            case 6:
+            case 'anulom-vilom':
                document.location.href = "pushup.html";
                highlightProduct(item);
                break;
@@ -97,7 +98,7 @@
 			}					
          function highlightProduct(item) {
             const el = document.getElementById(item);
-            if (el) {
+            if (item) {
                [...el.parentElement.children].forEach(sib => sib.classList.remove('highlighted'));
                el.classList.add('highlighted');               
             }

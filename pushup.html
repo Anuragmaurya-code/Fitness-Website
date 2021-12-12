@@ -7,94 +7,52 @@
       <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Inter:wght@300&display=swap" rel="stylesheet">
    </head>
    <body>
-      <div class="content">
-         <div class="container">
+      <div class="content" >
+         <div class="">
             <div class="header">
                <h1>
-                  <svg width="60" height="60" style="padding-right: 12px;"
+                  <svg width="60" height="60" style="padding-left: 12px;"
                      xmlns="http://www.w3.org/2000/svg">
                      <image href="assets/fitness.jpg" height="60" width="60"/>
                   </svg>
-                  FITNESS
+                  Pushup
                </h1>
             </div>
-            <h2>Exercise</h2>
-            <div class="exercise-deck">
-               <div class="tile" id=1 onclick="setExercise(1)">
-                  <img src="assets/pushup.jpg" height="170px" width="270" />
-                  <div class="item-title">Pushup</div>
+            <h2>Pushup</h2>
+            <div class="pushup-deck">
+               <div  class="tile" id=1 onclick="highlightProduct(1)">
+                  <img src="assets/pushup/pushup1.jpg" height="170px" width="270" >
+                  <div class="item-title">Step 1</div>
                </div>
-               <div  class="tile" id=2 onclick="setExercise(2)">
-                  <img src="assets/plank.jpg" height="170px" width="270"/>
-                  <div class="item-title">Plank</div>
-               </div>
-               <div class="tile" id=3 onclick="setExercise(3)" >
-                  <img src="assets/squat.jpg" height="170px" width="270"/>
-                  <div class="item-title">Squat</div>
+               <div class="tile" id=2 onclick="highlightProduct(2)">
+                  <img src="assets/pushup/pushup2.jpg" height="170px" width="270" >
+                  <div class="item-title" >Step 2</div>
                </div>
             </div>
-            <h2>Yoga</h2>
-            <div class="yoga-deck">
-               <div  class="tile" id=4 onclick="setExercise(4)" >
-                  <img src="assets/surya namaskar.jpeg" height="170px"width="270"/>
-                  <div class="item-title">Surya namaskar</div>
-               </div>
-               <div  class="tile" id=5 onclick="setExercise(5)">
-                  <img src="assets/kapalbharti.jpg" height="170px" width="270"/>
-                  <div class="item-title">Kapal Bharti</div>
-               </div>
-               <div class="tile" id=6 onclick="setExercise(6)">
-                  <img src="assets/Anulom Vilom.jpg" height="170px" width="270"/>
-                  <div class="item-title">Anulom Vilom</div>
-               </div>
-            </div>
-         </div>
-         </div><div class="alan-btn"></div>
-         <script type="text/javascript"
-         src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
-         <script>
-         var alanBtnInstance = alanBtn({
-         key: "93141fea105d62cb3977e095c566caa62e956eca572e1d8b807a3e2338fdd0dc/stage",
-         onCommand: function (commandData) {
-         if (commandData.command === "highlight") {
-         highlightProduct(commandData.item);
-         }else if(commandData.command==="hyerlink")
-         {
-            setExercise(commandData.item);
-         }
-         },
-         rootEl: document.getElementById("alan-btn"),
-         });
-      </script>
+            <button onclick="goback()" class="button">Go back</button>
+       </div>
+       
+       <div class="alan-btn"></div>
+       <script type="text/javascript"
+ src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+<script>
+  var alanBtnInstance = alanBtn({
+    key: "93141fea105d62cb3977e095c566caa62e956eca572e1d8b807a3e2338fdd0dc/stage",
+    onCommand: function (commandData) {
+      if (commandData.command === 'goback') {
+        //call client code that will react on the received command
+        goback();
+      }
+    },
+    rootEl: document.getElementById("alan-btn"),
+  });
+</script>
+       
       <script>
-         function setExercise(item){
-            switch(item){
-            case 1:
-               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
-               highlightProduct(item);
-               break;
-            case 2:
-               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
-               highlightProduct(item);
-               break;
-            case 3:
-               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
-               highlightProduct(item);
-               break;
-            case 4:
-               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
-               highlightProduct(item);
-               break;
-            case 5:
-               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
-               highlightProduct(item);
-               break;
-            case 6:
-               document.location.href = "https://github.com/Anuragmaurya-code/Fitness-Website";
-               highlightProduct(item);
-               break;
-            }
-			}					
+          function goback()
+          {
+            document.location.href = "index.html";
+          }
          function highlightProduct(item) {
             const el = document.getElementById(item);
             if (el) {
@@ -103,5 +61,6 @@
             }
          };
       </script>
+
    </body>
 </html>
